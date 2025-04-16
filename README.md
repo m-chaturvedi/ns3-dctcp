@@ -22,10 +22,22 @@ Python 3.11.2
 
 
 
-Build with:s
+Build and run with `build.sh`:
 
 ```bash
-g++ figure_1_tcp_dctcp_queue_size.cc $(pkg-config --libs ns3-point-to-point ns3-internet ns3-applications ns3-point-to-point-layout ) -o figure_1_tcp_dctcp_queue_size
+$  cat build.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+g++ figure_1_tcp_dctcp_queue_size.cc $(pkg-config --libs ns3-point-to-point \
+        ns3-internet ns3-applications ns3-point-to-point-layout) -o \
+        figure_1_tcp_dctcp_queue_size
+
+
+g++ figure_13_tcp_dctcp_cdf.cc $(pkg-config --libs ns3-point-to-point \
+        ns3-internet ns3-applications ns3-point-to-point-layout) -o \
+        figure_13_tcp_dctcp_cdf
+
 ```
 
 
